@@ -11,8 +11,8 @@ import profile from '../assets/profile.jpg';
 const About = () => {
     return (
         <>
-            <div className="introimg flex flex-col md:flex-row items-center justify-between">
-                <div className="intro">
+            <div className="introimg flex flex-col md:flex-row items-center justify-between gap-10">
+                <div className="intro md:w-1/2">
                     <motion.div variants={textVariant()}>
                         <h2 className={styles.sectionHeadText}>This Is Me</h2>
                     </motion.div>
@@ -25,11 +25,24 @@ const About = () => {
                     </motion.p>
                 </div>
 
-                <div className="img flex space-x-8 p-5">
-                    <Tilt>
-                        <img className="animate-zoomIn flex h-80 w-80 rounded-full space-x-4" src={profile} alt="" />
+                <motion.div 
+                    variants={fadeIn("left", "spring", 0.3, 1)}
+                    className="img flex justify-center md:w-1/2 w-full px-4 md:px-0"
+                >
+                    <Tilt
+                        tiltMaxAngleX={15}
+                        tiltMaxAngleY={15}
+                        scale={1.1}
+                        transitionSpeed={450}
+                        className="w-full max-w-[300px] md:max-w-[400px]"
+                    >
+                        <img 
+                            className="w-full h-auto rounded-full shadow-lg animate-zoomIn" 
+                            src={profile} 
+                            alt="Profile" 
+                        />
                     </Tilt>
-                </div>
+                </motion.div>
             </div>
         </>
     );

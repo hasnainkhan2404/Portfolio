@@ -53,14 +53,16 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+  if (isMobile) return null; // Don't render on mobile
+
   return (
     <Canvas
       frameloop='demand'
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: isMobile ? 35 : 25 }}
+      camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
-      style={{ height: isMobile ? '500px' : '800px' }}
+      style={{ height: '800px' }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
