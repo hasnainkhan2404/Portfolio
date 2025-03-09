@@ -39,6 +39,7 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 750px)");
@@ -48,18 +49,24 @@ const BallCanvas = ({ icon }) => {
       setIsMobile(event.matches);
     };
 
+    // Preload the texture
+    const texture = new Image();
+    texture.src = icon;
+    texture.onload = () => setIsLoaded(true);
+
     mediaQuery.addEventListener("change", handleMediaQueryChange);
     return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
-  }, []);
+  }, [icon]);
 
   return (
     <Canvas
       frameloop='demand'
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance", alpha: true }}
       style={{
         width: isMobile ? '75px' : '100px',
         height: isMobile ? '75px' : '100px',
+        visibility: isLoaded ? 'visible' : 'hidden'
       }}
     >
       <Suspense fallback={<CanvasLoader />}>

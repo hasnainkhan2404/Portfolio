@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("./desktop_pc/scene.gltf", true);
 
   return (
     <mesh>
@@ -31,29 +31,30 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 750px)");
-
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
+    // Set loading false after a short delay
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      clearTimeout(timer);
     };
   }, []);
 
-  if (isMobile) return null; // Don't render on mobile
+  if (isMobile || isLoading) return null;
 
   return (
     <Canvas
@@ -61,7 +62,7 @@ const ComputersCanvas = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance", alpha: true }}
       style={{ height: '800px' }}
     >
       <Suspense fallback={<CanvasLoader />}>
