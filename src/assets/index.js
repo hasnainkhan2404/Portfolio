@@ -28,9 +28,9 @@ import tesla from "./company/tesla.png";
 import sviet from "./company/SVIET.png";
 import s60 from "./company/s60.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import Estate from "./Estate.png";
+import Learnify from "./Learnify.png";
+import App from "./App.png";
 
 export {
   logo,
@@ -60,7 +60,7 @@ export {
   tesla,
   sviet,
   s60,
-  carrent,
-  jobit,
-  tripguide,
+  Estate,
+  Learnify,
+  App,
 };

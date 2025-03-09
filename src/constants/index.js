@@ -15,9 +15,9 @@ import {
   git,
   figma,
   docker,
-  carrent,
-  jobit,
-  tripguide,
+  Estate,
+  Learnify,
+  App,
   threejs,
   sviet,
   s60,
@@ -133,10 +133,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Dec 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining mobile applications using React Native and modern mobile development frameworks.",
+      "Building cross-platform apps with native functionality for both iOS and Android platforms.",
+      "Implementing mobile-first UI/UX designs and ensuring smooth performance across different devices.",
+      "Optimizing app performance, reducing load times, and implementing offline functionality.",
     ],
   },
   {
@@ -146,10 +146,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "Dec 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Creating user-centered designs by understanding business requirements and user feedback.",
+      "Developing wireframes, user flows, and interactive prototypes using tools like Figma and Adobe XD.",
+      "Conducting user research and usability testing to optimize user experiences.",
+      "Collaborating with developers to ensure high-quality implementation of design systems and visual elements.",
     ],
   },
   {
@@ -159,10 +159,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "March 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Creating engaging visual content and marketing materials using Canva and Adobe Photoshop for various digital platforms.",
+      "Developing and maintaining WordPress websites, including custom theme modifications and plugin integration.",
+      "Building and managing e-commerce stores on Shopify, including theme customization and product optimization.",
+      "Designing user interfaces and creating design systems using Figma for web and mobile applications.",
     ],
   },
 ];
@@ -196,9 +196,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Real Estate",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based platform that allows users to search, book, Their Dream Homes from various Locations, providing a convenient and efficient solution Of real Estate, They Can Even Compare Prices.",
     tags: [
       {
         name: "react",
@@ -213,13 +213,13 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: Estate,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Learnify",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Web application that enables Students to search for Their Particular College's Study Materials, They Can Study Online From Any Professor Or Teacher They Want And They Can Also Access Their Notes And RQ.",
     tags: [
       {
         name: "react",
@@ -234,13 +234,13 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: Learnify,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "My Field App",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A Complete Field App For Farmers To Manage Their Field and Their Crops , They Can Also Take E-Consult for Their Agricultural Or Financial Problems,Also Can See The Weather Forecast And Can Have Recommendations.",
     tags: [
       {
         name: "nextjs",
@@ -255,8 +255,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: App,
+    source_code_link: "https://github.com/hasnainkhan2404/Myfieldoriginal.git",
   },
 ];
 
